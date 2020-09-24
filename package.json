@@ -1,0 +1,39 @@
+{
+  "name": "cssmitten",
+  "version": "3.0.5",
+  "description": "customizable css lib",
+  "main": "index.js",
+  "bin": {
+    "cssmitten": "./cli.js"
+  },
+  "style": "cssmitten.css",
+  "scripts": {
+    "build": "node ./cli.js > ./cssmitten.css",
+    "dist": "npm run build && postcss --no-map --use cssnano --use autoprefixer --autoprefixer.browsers '> 5%' -o ./cssmitten.min.css ./cssmitten.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kristoferjoseph/cssmitten.git"
+  },
+  "keywords": [
+    "css"
+  ],
+  "author": "@dam",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/kristoferjoseph/cssmitten/issues"
+  },
+  "homepage": "https://github.com/kristoferjoseph/cssmitten#readme",
+  "devDependencies": {
+    "@architect/sandbox": "^2.0.0",
+    "autoprefixer": "^7.1.3",
+    "cssnano-cli": "^1.0.5",
+    "postcss-cli": "^4.1.0"
+  },
+  "dependencies": {
+    "chroma-js": "^1.3.6",
+    "hash-switch": "^2.2.1",
+    "modular-scale": "^5.1.0"
+  }
+}
